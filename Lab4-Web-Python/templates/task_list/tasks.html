@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Задачи{% endblock %}
+{% block content %}
+        <ul>
+            {% for task in tasks %}
+                {% include 'task_list/task_element.html' with element=task %}
+            {% empty %}
+                <li> Задач нет</li>
+            {% endfor %}
+        </ul>
+{% endblock %}
